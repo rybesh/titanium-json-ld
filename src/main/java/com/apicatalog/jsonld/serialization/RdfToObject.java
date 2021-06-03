@@ -124,6 +124,7 @@ final class RdfToObject {
                         && literal.getDatatype() != null
                         && RdfConstants.JSON.equals(literal.getDatatype())) {
 
+            System.err.println(literal.getValue());
             try (JsonParser parser = Json.createParser(new StringReader(literal.getValue()))) {
 
                 parser.next();
